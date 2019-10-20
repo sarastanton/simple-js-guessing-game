@@ -58,3 +58,7 @@ input:disabled {
   font-family: 'Shadows Into Light', serif;
   font-size: 36pt;
 }
+
+@media only screen and (max-width: 600px) {
+  button { font-size: 14pt; }
+}
