@@ -30,7 +30,7 @@ checkGuess = () => {
 
 giveFeedback = () => {
   const direction = guess > number ? "high" : "low"
-  document.getElementById("feedback").innerText = `Try again -- too ${direction}!`
+  document.getElementById("feedback").innerText = `Try again - too ${direction}!`
 }
 
 updateCounter = () => {

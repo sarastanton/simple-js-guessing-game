@@ -1,34 +1,60 @@
+/* font-family: 'Bitter', serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Acme', sans-serif; */
+
+
 body {
-  background-color: salmon;
   height: 900px;
   margin: 0;
   padding: 5px;
   text-align: center;
+  font-family: 'Bitter', serif;
+  font-size: 16pt;
+  background-color: linen;
+  color: salmon;
 }
 
 button {
   height: 50px;
   width: 150px;
-  background-color: lemonchiffon;
+  background-color: salmon;
+  color: linen;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 8px;
   cursor: pointer;
   font-size: 20pt;
+  /* border-color: linen; */
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 input {
   height: 40px;
   width: 100px;
   margin: 50px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-size: 36pt;
+  color: salmon;
+}
+
+input:disabled {
+  cursor: not-allowed;
 }
 
 #feedback {
-  color: red;
   font-size: 20pt;
   margin: 50pt;
+  font-family: 'Shadows Into Light', serif;
+  font-size: 36pt;
 }
 
 #counter {
-  color: yellow;
   font-size: 20pt;
   margin: 50pt;
+  font-family: 'Shadows Into Light', serif;
+  font-size: 36pt;
 }
