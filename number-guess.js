@@ -3,13 +3,6 @@ let number;
 let counter = 10;
 let activeGame = false;
 
-checkStatus = () => {
-  if (!activeGame) {
-    document.getElementById("feedback").innerText = "Click 'New Game' to start!";
-  }
-  console.log("click")
-}
-
 newGame = () => {
   activeGame = true;
   number = Math.round(Math.random() * 100);
