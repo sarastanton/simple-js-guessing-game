@@ -44,17 +44,18 @@ lostGameMessage = () => {
   document.getElementById("counter").innerText = "";
   document.getElementById("guess").disabled = true;
   document.getElementById("guess-button").disabled = true;
-  document.getElementById("feedback").innerText = `Sorry, you're out of tries! My number was #{number}. Click 'New Game' to play again!`
+  document.getElementById("feedback").innerText = `Sorry, you're out of tries! My number was ${number}. Click 'New Game' to play again!`
 }
 
 wonGameMessage = () => {
+  counter -= 1;
   activeGame = false;
   const textVar = counter == 1 ? "try" : "tries"
   document.getElementById("guess").disabled = true;
   document.getElementById("guess-button").disabled = true;
   document.getElementById("feedback").style.color = 'green';
   document.getElementById("feedback").innerText = `Congrats, you guessed my number! Click 'New Game' to play again! `
-  document.getElementById("counter").innerText = `You still had ${counter - 1} ${textVar} to spare!`
+  document.getElementById("counter").innerText = `You still had ${counter} ${textVar} to spare!`
 }
 
 const guessInput = document.getElementById("guess");
