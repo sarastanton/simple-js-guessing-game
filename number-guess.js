@@ -1,6 +1,6 @@
 let guess;
 let number;
-let counter = 10;
+let counter;
 let activeGame = false;
 
 newGame = () => {
