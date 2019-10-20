@@ -5,11 +5,12 @@ let activeGame = false;
 
 newGame = () => {
   activeGame = true;
-  document.getElementById("counter").innerText = `Enter your guess above. You have ${counter} tries left!`
-  // alert("Click!");
   number = Math.round(Math.random() * 100);
   counter = 10;
-  console.log('number: ' + number)
+  document.getElementById("guess").disabled = false;
+  document.getElementById("guess-button").disabled = false;
+  document.getElementById("feedback").innerText = "";
+  document.getElementById("counter").innerText = `Enter your guess above. You have ${counter} tries left!`;
 }
 
 checkGuess = () => {
@@ -28,22 +29,37 @@ checkGuess = () => {
 }
 
 giveFeedback = () => {
-  let direction;
-  guess > number ? direction = "high" : direction = "low"
+  const direction = guess > number ? "high" : "low"
   document.getElementById("feedback").innerText = `Try again -- too ${direction}!`
 }
 
 updateCounter = () => {
   counter -= 1;
-  document.getElementById("counter").innerText = `${counter} tries left`;
+  document.getElementById("counter").innerText = counter == 1 ? `${counter} try left` : `${counter} tries left`;
 }
 
 lostGameMessage = () => {
   activeGame = false;
+  document.getElementById("counter").innerText = "";
+  document.getElementById("guess").disabled = true;
+  document.getElementById("guess-button").disabled = true;
   document.getElementById("feedback").innerText = `Sorry, you're out of tries! My number was #{number}. Click 'New Game' to play again!`
 }
 
 wonGameMessage = () => {
   activeGame = false;
-  document.getElementById("feedback").innerText = `Congrats, you guessed my number!!! Click 'New Game' to play again! `
+  const textVar = counter == 1 ? "try" : "tries"
+  document.getElementById("guess").disabled = true;
+  document.getElementById("guess-button").disabled = true;
+  document.getElementById("feedback").style.color = 'green';
+  document.getElementById("feedback").innerText = `Congrats, you guessed my number! Click 'New Game' to play again! `
+  document.getElementById("counter").innerText = `You still had ${counter - 1} ${textVar} to spare!`
 }
+
+const guessInput = document.getElementById("guess");
+
+guessInput.addEventListener("keyup", function(event) {
+  if (guessInput == document.activeElement && event.key === "Enter") {
+    checkGuess();
+  }
+});
