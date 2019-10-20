@@ -7,6 +7,7 @@ newGame = () => {
   activeGame = true;
   number = Math.round(Math.random() * 100);
   counter = 10;
+  document.getElementById("guess").value = "";
   document.getElementById("guess").disabled = false;
   document.getElementById("guess-button").disabled = false;
   document.getElementById("feedback").innerText = "";
