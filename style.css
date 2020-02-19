@@ -11,14 +11,14 @@ body {
   text-align: center;
   font-family: 'Bitter', serif;
   font-size: 16pt;
-  background-color: linen;
-  color: salmon;
+  background-image: linear-gradient(to bottom, lightcyan, pink, plum);
+  color: rebeccapurple;
 }
 
 button {
   height: 50px;
   width: 160px;
-  background-color: salmon;
+  background-color: rebeccapurple;
   color: linen;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 8px;
@@ -38,7 +38,7 @@ input {
   margin: 50px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   font-size: 36pt;
-  color: salmon;
+  color: rebeccapurple;
 }
 
 input:disabled {
